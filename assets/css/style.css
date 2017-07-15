@@ -1,11 +1,11 @@
+/*Variables*/
+  :root {
+
+  }
 /*Fonts*/
   @font-face {
     font-family: heading;
     src:url(../fonts/heading/junegull.ttf);
-  }
-  @font-face {
-    font-family: paragraph;
-    src: url(../fonts/paragraph/Pacifico.ttf);
   }
   @font-face {
     font-family: 'Material Icons';
@@ -13,7 +13,6 @@
     font-weight: 400;
     src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v20/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
   }
-
   .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -45,26 +44,88 @@
   /* Rules for using icons as white on a dark background. */
   .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 
-/* Desktop Attributes*/
-  #nav {
-    position: fixed;
-    top: 40%;
-    left:0px;
-    float: left;
-    width: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 0px;
-  }
-  ul {
-    padding: 0px;
-  }
-  li {
-      list-style-type: none;
-  }
+/* Base Attributes*/
+  /*Nav Properties*/
+    #nav {
+      z-index: 5;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      left:0px;
+      float: left;
+      width: auto;
+    }
+    #ul {
+      background-color: rgba(0, 143, 0, 0.7);
+    }
+    #ul li {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    #drop-menu {
+      position: absolute;
+      top: 145px;
+      left: 84px;
+      color: #fff;
+      font-size: 30px;
+      font-family: heading;
+      float: right;
+      text-align: center;
+    }
+    #drop-menu li {
+      display: none;
+      background-color: rgba(0, 143, 0, 0.7) ;
+      padding: 16.5px 10px 16.5px 10px;
+      opacity: 0;
+      transform-origin: top left;
+    }
+    #ul li:hover > ul#drop-menu li:nth-child(1) {
+      display: block;
+      animation: dropdown 300ms ease-in-out;
+      animation-delay: 0ms;
+      animation-fill-mode: forwards;
+    }
+    #ul li:hover > ul#drop-menu li:nth-child(2) {
+      display: block;
+      animation: dropdown 300ms ease-in-out;
+      animation-delay: 300ms;
+      animation-fill-mode: forwards;
+    }
+    #ul li:hover > ul#drop-menu li:nth-child(3) {
+      display: block;
+      animation: dropdown 300ms ease-in-out;
+      animation-delay: 600ms;
+      animation-fill-mode: forwards;
+    }
+    #ul li:hover > ul#drop-menu li:nth-child(4) {
+      display: block;
+      animation: dropdown 300ms ease-in-out;
+      animation-delay: 900ms;
+      animation-fill-mode: forwards;
+    }
+    ul {
+      padding: 0px;
+    }
+    li {
+        list-style-type: none;
+    }
+    li:hover {
+      background-color: rgba(0, 199, 71, 0.4);
+    }
+    #ul li:hover {
+      background-color: rgba(0, 199, 71, 0.7);
+    }
+    @keyframes dropdown {
+      0% {
+        opacity: 0;
+        transform: rotate(-30deg) translateX(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: rotate(0deg) translateX(0px);
+      }
+    }
+
   h1 {
     font-size: 150px;
     font-family: heading;
@@ -89,10 +150,10 @@
     background-image: url(../img/landing.jpg);
     background-size: cover;
   }
-  #page {
+    #page {
     position: absolute;
     top: 100%;
-  }
+    }
   .content {
     /*background-color: #fff;*/
     text-align: center;
@@ -114,33 +175,26 @@
   @media screen and (max-width: 991px) {
 
   }
-/* Medium Tablet Attributeas*/
+/* Phone Attributeas*/
   @media screen and (max-width: 991px) {
-
-  }
-/*Phone Attributes*/
-  @media only screen and (max-width: 479px) {
     #nav {
-      margin: 0px;
-      width: 180px;
-      height: 70px;
       top: 0%;
       left: 50%;
       transform: translate(-50%, 0%);
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      border-top-right-radius: 0px;
-      padding-left: 12px;
-      padding-right: 12px;
-      padding-bottom: 12px;
-      padding-top: 0px;
     }
-    li {
+    #ul {
+      margin: 0px;
+    }
+    #ul li {
       float: left;
+      background-color: rgba(0, 143, 0, 0.7);
     }
-    p {
-      font-size: 25px;
+    #drop-menu {
+      top: 64.5px;
+      left: 168px;
     }
-  }
+    #drop-menu li {
+      padding: 16.5px 10px 16.5px 10px;
+      width: 159px;
+    }
+}

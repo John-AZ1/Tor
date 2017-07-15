@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Tor</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/fonts/material-icons/material-icons.css">
-<body style="height: 100%; width:100%; margin: 0px">
-  <!-- Background -->
-    <div id="back-box">
-    </div>
+<?php include 'assets/php/header.php'; ?>
     <h1>Tor</h1>
   <!-- Content -->
     <div id="page">
@@ -24,15 +13,6 @@
       </div>
     </div>
 
-
-  <!-- Nav  -->
-  <nav id="nav">
-    <ul>
-      <li><span><a href="index.php"><i class="material-icons md-light">home</i></a></span></li>
-      <li><i class="material-icons md-light">grade</i></li>
-      <li><i class="material-icons md-light">list</i></li>
-    </ul>
-  </nav>
   <!-- External Scripts -->
     <script src="assets/js/script.js"></script>
 
